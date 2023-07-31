@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="message">
+        <h1>Click anywhere to change background-color</h1>
+    </div>
+</body>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        height: 100vh;
+    }
+</style>
+
+<script>
+    const htmlbody = document.querySelector('body')
+    const randomClick = () => {
+    const colors = ['red', 'blue', 'yellow', 'green']
+    const randomIndex = Math.floor(Math.random() * colors.length)
+    const randomColor = colors[randomIndex]
+    htmlbody.style.backgroundColor = randomColor
+    if(randomColor == "yellow"){
+      htmlbody.style.color = "black"  
+    } else {
+        htmlbody.style.color = "white"
+    }
+    }
+htmlbody.onclick = randomClick; 
+</script>
+</html>
